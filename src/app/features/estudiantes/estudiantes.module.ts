@@ -7,6 +7,7 @@ import { CrearEstudianteComponent } from './crear-estudiante/crear-estudiante.co
 import { FormsModule } from '@angular/forms';
 import { RoleGuard } from 'src/app/core/guards/role.guard';
 import { EditarEstudianteComponent } from './editar-estudiante/editar-estudiante.component';
+import { MisNotasComponent } from '../notas/mis-notas/mis-notas.component';
 
 const routes: Routes = [
   {
@@ -33,7 +34,16 @@ const routes: Routes = [
     data: {
       roles: ['Admin']
     }
-  }
+  },
+
+  {
+    path: 'mis-notas',
+    component: MisNotasComponent,
+    canActivate: [AutenticacionGuard, RoleGuard],
+    data: {
+      roles: ['Estudiante']
+    }
+  },
 ];
 
 @NgModule({

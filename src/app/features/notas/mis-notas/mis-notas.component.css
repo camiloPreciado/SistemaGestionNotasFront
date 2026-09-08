@@ -6,6 +6,15 @@
   margin-bottom: 20px;
 }
 
+.acciones {
+  margin-bottom: 20px;
+}
+
+.acciones button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -14,13 +23,19 @@ table {
 
 th,
 td {
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   padding: 10px;
   text-align: left;
 }
 
 th {
   font-weight: bold;
+}
+
+td button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
 }
 
 .pagination {
