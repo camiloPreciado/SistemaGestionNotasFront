@@ -1,27 +1,118 @@
-# SistemaGestionNotasFront
+# Sistema de Gestión de Notas – Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
+Frontend de la aplicación de gestión de estudiantes, profesores y notas académicas.
 
-## Development server
+El proyecto fue desarrollado utilizando Angular y se comunica con los microservicios del backend mediante APIs REST.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Tecnologías utilizadas
 
-## Code scaffolding
+- **Angular 12.2.18** – Framework principal.
+- **TypeScript** – Lenguaje de programación.
+- **HTML / CSS** – Estructura y estilos de la aplicación.
+- **Bootstrap** – Componentes y estilos de interfaz.
+- **RxJS** – Manejo de operaciones asíncronas.
+- **Angular Router** – Navegación entre vistas.
+- **JWT** – Manejo de autenticación mediante tokens.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requisitos
 
-## Build
+Para ejecutar el proyecto se requiere tener instalado:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Node.js 14.21.3**
+- **npm 6.14.18**
+- **Angular CLI 12**
 
-## Running unit tests
+Se puede verificar la versión instalada mediante:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```bash
+node --version
+npm --version
+ng version
+```
 
-## Running end-to-end tests
+## Instalación
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Clonar el repositorio y acceder a la carpeta del proyecto:
 
-## Further help
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd SistemaGestionNotasFront
+```
+Instalar las dependencias:
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Configuración
+
+El frontend se encuentra configurado para comunicarse con los microservicios del backend mediante las siguientes URLs:
+
+```text
+Usuario.API       https://localhost:7223
+Estudiantes.API   https://localhost:7061
+Profesores.API    https://localhost:7116
+Notas.API         https://localhost:7290
+```
+Antes de ejecutar el frontend, verificar que los microservicios del backend se encuentren disponibles.
+
+
+## Ejecución
+
+Para iniciar la aplicación en modo desarrollo:
+
+```bash
+ng serve -o
+```
+La aplicación estará disponible normalmente en:
+```text
+http://localhost:4200
+```
+
+También se puede utilizar:
+```bash
+npm start
+```
+
+## Funcionalidades principales
+
+La aplicación permite:
+
+- Inicio de sesión.
+- Autenticación mediante JWT.
+- Control de acceso según el rol del usuario.
+- Gestión de estudiantes.
+- Gestión de profesores.
+- Gestión de notas.
+- Consulta de notas propias para estudiantes.
+- Navegación protegida mediante guards.
+- Envío automático del token JWT mediante interceptor.
+
+## Roles
+
+El frontend adapta las opciones disponibles según el rol autenticado:
+
+- **Admin:** acceso completo a estudiantes, profesores y notas.
+- **Profesor:** consulta de estudiantes y profesores, y gestión de notas.
+- **Estudiante:** consulta únicamente de sus propias notas.
+
+Las restricciones de seguridad definitivas son aplicadas por el backend.
+
+## Estructura básica
+
+```text
+src/app/
+├── core/
+│   ├── guards/
+│   ├── interceptors/
+│   ├── models/
+│   └── services/
+│
+│
+└── features/
+    ├── usuarios/
+    ├── dashboard/
+    ├── estudiantes/
+    ├── profesores/
+    └── notas/
+```
+
