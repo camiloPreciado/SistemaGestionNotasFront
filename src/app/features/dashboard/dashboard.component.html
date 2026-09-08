@@ -20,21 +20,23 @@
     </button>
 
     <button
-      *ngIf="esAdminOProfesor()"
+      *ngIf="esAdmin()"
       type="button"
       routerLink="/profesores">
       Profesores
     </button>
 
     <button
-      *ngIf="rol === 'Admin'"
-      type="button">
+      *ngIf="rol === 'Admin' || rol === 'Profesor'"
+      type="button"
+      routerLink="/notas">
       Notas
     </button>
 
     <button
       *ngIf="esEstudiante()"
-      type="button">
+      type="button"
+      routerLink="/notas/mis-notas">
       Mis notas
     </button>
 

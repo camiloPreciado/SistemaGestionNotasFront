@@ -1,0 +1,86 @@
+<div class="notas-container">
+
+  <h1>Mis notas</h1>
+
+  <div
+    *ngIf="loading">
+    Cargando tus notas...
+  </div>
+
+  <div
+    *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <table
+    *ngIf="!loading && notas.length > 0">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Profesor</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let nota of notas">
+
+        <td>{{ nota.id }}</td>
+
+        <td>
+          {{ nota.nombre }}
+        </td>
+
+        <td>
+          {{ nota.nombreProfesor }}
+        </td>
+
+        <td>
+          {{ nota.valor }}
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div
+    *ngIf="!loading && notas.length === 0">
+
+    No tienes notas registradas.
+
+  </div>
+
+  <div
+    class="pagination"
+    *ngIf="!loading && totalPages > 0">
+
+    <button
+      type="button"
+      (click)="paginaAnterior()"
+      [disabled]="page === 1">
+
+      Anterior
+
+    </button>
+
+    <span>
+      Página {{ page }} de {{ totalPages }}
+    </span>
+
+    <button
+      type="button"
+      (click)="paginaSiguiente()"
+      [disabled]="page === totalPages">
+
+      Siguiente
+
+    </button>
+
+  </div>
+
+</div>

@@ -47,11 +47,12 @@ export class LoginComponent {
         this.router.navigate(['/dashboard']);
       },
       error => {
+        console.error('Error en login:', error);
 
-        console.error('Error de login:', error);
-
-        this.errorMessage = 'Correo o contraseña incorrectos.';
-        this.loading = false;
+        this.errorMessage =
+          error.error?.mensaje ||
+          error.error?.message ||
+          'No fue posible iniciar sesión.';
       }
     );
   }

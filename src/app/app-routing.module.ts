@@ -27,6 +27,12 @@ const routes: Routes = [
         .then(m => m.ProfesoresModule)
   },
   {
+  path: 'notas',
+    loadChildren: () =>
+      import('./features/notas/notas.module')
+        .then(m => m.NotasModule)
+  },
+  {
     path: '',
     redirectTo: 'login',
     pathMatch: 'full'

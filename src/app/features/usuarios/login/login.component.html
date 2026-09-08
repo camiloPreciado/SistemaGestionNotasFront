@@ -31,6 +31,10 @@
           placeholder="Ingrese su contraseña">
       </div>
 
+      <div *ngIf="errorMessage">
+        {{ errorMessage }}
+      </div>
+
       <button type="submit">
         Iniciar sesión
       </button>

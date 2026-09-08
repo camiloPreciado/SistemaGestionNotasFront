@@ -25,6 +25,10 @@ export class DashboardComponent {
     return this.rol === 'Admin' || this.rol === 'Profesor';
   }
 
+  esAdmin(): boolean {
+    return this.rol === 'Admin';
+  }
+
   esEstudiante(): boolean {
     return this.rol === 'Estudiante';
   }

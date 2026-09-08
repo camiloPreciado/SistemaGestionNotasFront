@@ -1,0 +1,91 @@
+<div class="editar-nota-container">
+
+  <h1>Editar nota</h1>
+
+  <div *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <form (ngSubmit)="actualizar()">
+
+    <div>
+      <label>ID</label>
+
+      <input
+        type="number"
+        [value]="id"
+        readonly>
+    </div>
+
+    <div>
+      <label>Estudiante</label>
+
+      <input
+        type="text"
+        [value]="idEstudiante + ' - ' + nombreEstudiante"
+        readonly>
+    </div>
+
+    <div>
+      <label>Profesor</label>
+
+      <input
+        type="text"
+        [value]="idProfesor + ' - ' + nombreProfesor"
+        readonly>
+    </div>
+
+    <div>
+      <label for="nombre">
+        Nombre
+      </label>
+
+      <input
+        id="nombre"
+        type="text"
+        name="nombre"
+        [(ngModel)]="nombre"
+        maxlength="100"
+        required>
+    </div>
+
+    <div>
+      <label for="valor">
+        Nota
+      </label>
+
+      <input
+        id="valor"
+        type="number"
+        name="valor"
+        [(ngModel)]="valor"
+        min="0"
+        max="5"
+        step="0.1"
+        required>
+    </div>
+
+    <div>
+
+      <button
+        type="submit"
+        [disabled]="loading">
+
+        {{ loading ? 'Actualizando...' : 'Actualizar' }}
+
+      </button>
+
+      <button
+        type="button"
+        (click)="cancelar()"
+        [disabled]="loading">
+
+        Cancelar
+
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { ProfesoresComponent } from './features/profesores/profesores.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

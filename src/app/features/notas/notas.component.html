@@ -1,0 +1,120 @@
+<div class="notas-container">
+
+  <h1>Notas</h1>
+
+
+  <div class="acciones">
+    <button
+      *ngIf="esProfesor()"
+      type="button"
+      routerLink="/notas/crear">
+
+      Nueva nota
+
+    </button>
+  </div>
+
+  <div
+    *ngIf="loading">
+    Cargando notas...
+  </div>
+
+  <div
+    *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <table
+    *ngIf="!loading && notas.length > 0">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Estudiante</th>
+        <th>Profesor</th>
+        <th>Valor</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let nota of notas">
+
+        <td>{{ nota.id }}</td>
+
+        <td>{{ nota.nombre }}</td>
+
+        <td>
+          {{ nota.nombreEstudiante }}
+        </td>
+
+        <td>
+          {{ nota.nombreProfesor }}
+        </td>
+
+        <td>
+          {{ nota.valor }}
+        </td>
+
+        <th>
+           <button
+              type="button"
+              (click)="editar(nota)">
+
+              Editar
+
+            </button>
+
+            <button
+              type="button"
+              (click)="eliminar(nota)">
+
+              Eliminar
+
+            </button>
+        </th>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div
+    *ngIf="!loading && notas.length === 0">
+
+    No hay notas registradas.
+
+  </div>
+
+  <div
+    class="pagination"
+    *ngIf="!loading && totalPages > 0">
+
+    <button
+      type="button"
+      (click)="paginaAnterior()"
+      [disabled]="page === 1">
+
+      Anterior
+
+    </button>
+
+    <span>
+      Página {{ page }} de {{ totalPages }}
+    </span>
+
+    <button
+      type="button"
+      (click)="paginaSiguiente()"
+      [disabled]="page === totalPages">
+
+      Siguiente
+
+    </button>
+
+  </div>
+
+</div>
