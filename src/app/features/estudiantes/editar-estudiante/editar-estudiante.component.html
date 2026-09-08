@@ -1,0 +1,74 @@
+<div class="editar-estudiante-container">
+
+  <h1>Editar estudiante</h1>
+
+  <div
+    class="success-message"
+    *ngIf="successMessage">
+    {{ successMessage }}
+  </div>
+
+  <div
+    class="error-message"
+    *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <form
+    *ngIf="estudiante"
+    (ngSubmit)="actualizar()">
+
+    <div class="form-group">
+      <label for="id">ID</label>
+
+      <input
+        type="text"
+        id="id"
+        [value]="estudiante.id"
+        disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="usuarioId">Usuario ID</label>
+
+      <input
+        type="text"
+        id="usuarioId"
+        [value]="estudiante.usuarioId"
+        disabled>
+    </div>
+
+    <div class="form-group">
+      <label for="nombre">Nombre</label>
+
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="nombre"
+        required
+        minlength="2"
+        maxlength="100"
+        placeholder="Ingrese el nombre">
+    </div>
+
+    <div class="buttons">
+
+      <button
+        type="submit"
+        [disabled]="loading">
+        {{ loading ? 'Guardando...' : 'Guardar cambios' }}
+      </button>
+
+      <button
+        type="button"
+        (click)="cancelar()"
+        [disabled]="loading">
+        Cancelar
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

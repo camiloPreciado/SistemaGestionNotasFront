@@ -1,0 +1,87 @@
+<div class="crear-profesor-container">
+
+  <h1>Crear profesor</h1>
+
+  <div
+    class="error-message"
+    *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <form (ngSubmit)="registrar()">
+
+    <div class="form-group">
+
+      <label for="nombre">
+        Nombre
+      </label>
+
+      <input
+        type="text"
+        id="nombre"
+        name="nombre"
+        [(ngModel)]="profesor.nombre"
+        required
+        minlength="2"
+        maxlength="100"
+        placeholder="Ingrese el nombre">
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="correo">
+        Correo electrónico
+      </label>
+
+      <input
+        type="email"
+        id="correo"
+        name="correo"
+        [(ngModel)]="profesor.correo"
+        required
+        placeholder="Ingrese el correo">
+
+    </div>
+
+    <div class="form-group">
+
+      <label for="contrasena">
+        Contraseña
+      </label>
+
+      <input
+        type="password"
+        id="contrasena"
+        name="contrasena"
+        [(ngModel)]="profesor.contrasena"
+        required
+        minlength="6"
+        placeholder="Ingrese la contraseña">
+
+    </div>
+
+    <div class="buttons">
+
+      <button
+        type="submit"
+        [disabled]="loading">
+
+        {{ loading ? 'Registrando...' : 'Registrar profesor' }}
+
+      </button>
+
+      <button
+        type="button"
+        (click)="cancelar()"
+        [disabled]="loading">
+
+        Cancelar
+
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

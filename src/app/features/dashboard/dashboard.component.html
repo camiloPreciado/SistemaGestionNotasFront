@@ -1,0 +1,53 @@
+<div class="dashboard-container">
+
+  <h1>Sistema de Gestión de Notas</h1>
+
+  <p>
+    Bienvenido
+  </p>
+
+  <p>
+    Rol: <strong>{{ rol }}</strong>
+  </p>
+
+  <div class="acciones">
+
+    <button
+      *ngIf="esAdminOProfesor()"
+      type="button"
+      routerLink="/estudiantes">
+      Estudiantes
+    </button>
+
+    <button
+      *ngIf="esAdminOProfesor()"
+      type="button"
+      routerLink="/profesores">
+      Profesores
+    </button>
+
+    <button
+      *ngIf="rol === 'Admin'"
+      type="button">
+      Notas
+    </button>
+
+    <button
+      *ngIf="esEstudiante()"
+      type="button">
+      Mis notas
+    </button>
+
+  </div>
+
+  <div class="logout-container">
+
+    <button
+      type="button"
+      (click)="cerrarSesion()">
+      Cerrar sesión
+    </button>
+
+  </div>
+
+</div>

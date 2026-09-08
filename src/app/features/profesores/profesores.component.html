@@ -1,0 +1,91 @@
+<div class="profesores-container">
+
+  <h1>Profesores</h1>
+
+  <div class="acciones">
+    <button
+      *ngIf="esAdmin()"
+      type="button"
+      routerLink="/profesores/crear">
+      Nuevo profesor
+    </button>
+  </div>
+
+  <div *ngIf="loading">
+    Cargando profesores...
+  </div>
+
+  <div *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+
+  <table *ngIf="!loading && profesores.length > 0">
+
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Usuario ID</th>
+        <th>Nombre</th>
+        <th *ngIf="esAdmin()">Acciones</th>
+      </tr>
+    </thead>
+
+    <tbody>
+
+      <tr *ngFor="let profesor of profesores">
+
+        <td>{{ profesor.id }}</td>
+        <td>{{ profesor.usuarioId }}</td>
+        <td>{{ profesor.nombre }}</td>
+
+        <td *ngIf="esAdmin()">
+
+          <button
+            type="button"
+            (click)="editar(profesor)">
+            Editar
+          </button>
+
+          <button
+            type="button"
+            (click)="eliminar(profesor)">
+            Eliminar
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <div *ngIf="!loading && profesores.length === 0">
+    No hay profesores registrados.
+  </div>
+
+  <div
+    class="pagination"
+    *ngIf="!loading && totalPages > 0">
+
+    <button
+      type="button"
+      (click)="paginaAnterior()"
+      [disabled]="page === 1">
+      Anterior
+    </button>
+
+    <span>
+      Página {{ page }} de {{ totalPages }}
+    </span>
+
+    <button
+      type="button"
+      (click)="paginaSiguiente()"
+      [disabled]="page === totalPages">
+      Siguiente
+    </button>
+
+  </div>
+
+</div>
