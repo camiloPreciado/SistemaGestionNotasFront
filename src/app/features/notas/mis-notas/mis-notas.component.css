@@ -62,3 +62,25 @@ td button {
   gap: 15px;
   margin-top: 20px;
 }
+
+td button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-weight: 500;
+}
+
+.page-size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.page-size select {
+  padding: 6px 10px;
+  cursor: pointer;
+}

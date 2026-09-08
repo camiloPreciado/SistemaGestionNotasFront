@@ -14,7 +14,7 @@ export class ProfesoresComponent implements OnInit {
    profesores: Profesor[] = [];
 
   page = 1;
-  pageSize = 1;
+  pageSize = 10;
 
   totalItems = 0;
   totalPages = 0;
@@ -68,6 +68,11 @@ export class ProfesoresComponent implements OnInit {
       this.page++;
       this.obtenerProfesores();
     }
+  }
+  
+  cambiarTamanoPagina(): void {
+    this.page = 1;
+    this.obtenerProfesores();
   }
 
   esAdmin(): boolean {

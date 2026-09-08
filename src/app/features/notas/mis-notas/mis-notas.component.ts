@@ -67,4 +67,9 @@ export class MisNotasComponent implements OnInit {
     }
   }
 
+  cambiarTamanoPagina(): void {
+    this.page = 1;
+    this.obtenerMisNotas();
+  }
+
 }

@@ -1,6 +1,7 @@
 .crear-profesor-container {
   max-width: 500px;
   margin: 30px auto;
+  padding: 20px;
 }
 
 .form-group {
@@ -22,6 +23,11 @@
 .buttons {
   display: flex;
   gap: 10px;
+}
+
+.buttons button {
+  padding: 8px 15px;
+  cursor: pointer;
 }
 
 .success-message {

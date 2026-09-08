@@ -1,37 +1,53 @@
 .estudiantes-container {
-  padding: 30px;
+  padding: 20px;
 }
 
 .estudiantes-container h1 {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
+}
+
+.acciones {
+  margin-bottom: 20px;
+}
+
+.acciones button {
+  padding: 8px 15px;
+  cursor: pointer;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 20px;
 }
 
 th,
 td {
-  padding: 12px;
+  border: 1px solid #ddd;
+  padding: 10px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
 }
 
 th {
   font-weight: bold;
 }
 
+td button {
+  margin-right: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
 .pagination {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 20px;
-  margin-top: 25px;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .pagination button {
-  padding: 8px 16px;
+  padding: 8px 15px;
   cursor: pointer;
 }
 
@@ -40,11 +56,14 @@ th {
   opacity: 0.5;
 }
 
-.acciones {
+.page-size {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   margin-bottom: 20px;
 }
 
-.acciones button {
-  padding: 10px 20px;
+.page-size select {
+  padding: 6px 10px;
   cursor: pointer;
 }

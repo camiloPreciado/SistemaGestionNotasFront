@@ -42,3 +42,12 @@ button {
   padding: 10px;
   cursor: pointer;
 }
+
+.error-message {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #dc3545;
+  border-radius: 4px;
+  color: #dc3545;
+  background-color: #f8d7da;
+}

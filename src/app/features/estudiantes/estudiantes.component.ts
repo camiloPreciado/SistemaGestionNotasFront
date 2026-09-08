@@ -75,6 +75,12 @@ export class EstudiantesComponent implements OnInit {
     }
   }
 
+  cambiarTamanoPagina(): void {
+    this.page = 1;
+    this.obtenerEstudiantes();
+  }
+
+
   esAdmin(): boolean {
     return this.usuarioService.getRol() === 'Admin';
   }

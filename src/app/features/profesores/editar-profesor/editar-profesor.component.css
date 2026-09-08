@@ -1,6 +1,7 @@
 .editar-profesor-container {
   max-width: 500px;
   margin: 30px auto;
+  padding: 20px;
 }
 
 .form-group {
@@ -24,8 +25,12 @@
   gap: 10px;
 }
 
+.buttons button {
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
 .error-message {
   margin-bottom: 15px;
   padding: 10px;
 }
-

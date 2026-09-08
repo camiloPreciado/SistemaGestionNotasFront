@@ -20,6 +20,25 @@
     {{ errorMessage }}
   </div>
 
+  <div class="page-size">
+  <label for="pageSize">Mostrar:</label>
+
+  <select
+    id="pageSize"
+    [(ngModel)]="pageSize"
+    (change)="cambiarTamanoPagina()">
+
+    <option [ngValue]="1">1</option>
+    <option [ngValue]="5">5</option>
+    <option [ngValue]="10">10</option>
+    <option [ngValue]="20">20</option>
+    <option [ngValue]="50">50</option>
+
+  </select>
+
+  <span>registros por página</span>
+</div>
+
   <table *ngIf="!loading && estudiantes.length > 0">
 
     <thead>

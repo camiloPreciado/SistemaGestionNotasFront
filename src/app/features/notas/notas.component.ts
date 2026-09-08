@@ -75,6 +75,11 @@ export class NotasComponent implements OnInit {
     }
   }
 
+  cambiarTamanoPagina(): void {
+    this.page = 1;
+    this.obtenerNotas();
+  }
+
   esProfesor(): boolean {
     const rol = this.usuarioService.getRol();
 
